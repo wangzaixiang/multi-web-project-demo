@@ -1,0 +1,33 @@
+{
+  "name": "@demo/o2-java-view",
+  "version": "1.0.0",
+  "description": "SQL view components",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit",
+    "lint": "echo 'Linting o2-java-view...'"
+  },
+  "dependencies": {
+    "@demo/interfaces": "workspace:*",
+    "@demo/h2-core": "workspace:*",
+    "@demo/h2-extra": "workspace:*",
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.0.0",
+    "typescript": "^5.0.0"
+  }
+}

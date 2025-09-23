@@ -1,0 +1,34 @@
+{
+  "name": "@demo/workspace",
+  "version": "1.0.0",
+  "description": "Multi-package JavaScript project workspace",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "pnpm -r build",
+    "build:packages": "pnpm -r --filter='./packages/*' build",
+    "build:apps": "pnpm -r --filter='./apps/*' build",
+    "clean": "pnpm -r clean",
+    "lint": "pnpm -r lint",
+    "type-check": "pnpm -r type-check",
+    "dev:app1": "cd apps/app1 && pnpm run dev",
+    "dev:app2": "cd apps/app2 && pnpm run dev",
+    "dev:app3": "cd apps/app3 && pnpm run dev",
+    "build:app1": "cd apps/app1 && pnpm run build",
+    "build:app2": "cd apps/app2 && pnpm run build",
+    "build:app3": "cd apps/app3 && pnpm run build",
+    "preview:app1": "echo '🚀 App1 running at: http://localhost:3001' && open http://localhost:3001 2>/dev/null || echo 'Please open http://localhost:3001 in your browser'"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0",
+    "rollup": "^3.0.0"
+  },
+  "packageManager": "pnpm@8.6.12"
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@demo/app3",
+  "version": "1.0.0",
+  "description": "Simple demonstration application",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@demo/interfaces": "workspace:*",
+    "@demo/h2-core": "workspace:*",
+    "@demo/h2-extra": "workspace:*",
+    "lit": "^3.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0"
+  }
+}

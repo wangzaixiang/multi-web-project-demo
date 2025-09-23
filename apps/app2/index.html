@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo App2 - Split Package</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+        }
+        
+        .header {
+            background: #27ae60;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .info-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .app-panel {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .chunk-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .chunk-item {
+            background: #e8f5e8;
+            padding: 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📦 Demo Application 2 - Split Package Mode</h1>
+        <p>Dependencies split into separate chunks for better caching and loading performance</p>
+    </div>
+    
+    <div class="container">
+        <div class="info-panel">
+            <h2>📊 Package Structure</h2>
+            <p>This application uses a split package approach where dependencies are broken into separate chunks:</p>
+            
+            <div class="chunk-list">
+                <div class="chunk-item">lit.js</div>
+                <div class="chunk-item">h2-core.js</div>
+                <div class="chunk-item">h2-extra.js</div>
+                <div class="chunk-item">o2-resource.js</div>
+                <div class="chunk-item">o2-datasource.js</div>
+                <div class="chunk-item">o2-views.js</div>
+                <div class="chunk-item">o2-analytics.js</div>
+                <div class="chunk-item">main.js</div>
+            </div>
+            
+            <p><strong>Benefits:</strong> Better caching, faster subsequent loads, selective loading</p>
+        </div>
+        
+        <div class="app-panel">
+            <h2>🚀 Application</h2>
+            <demo-app2></demo-app2>
+        </div>
+    </div>
+    
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

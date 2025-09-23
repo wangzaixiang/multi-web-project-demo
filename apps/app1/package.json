@@ -1,0 +1,40 @@
+{
+  "name": "@demo/app1",
+  "version": "1.0.0",
+  "description": "Full bundle application",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "rollup -c",
+    "preview": "vite preview",
+    "clean": "rm -rf dist",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@demo/h2-core": "workspace:*",
+    "@demo/h2-extra": "workspace:*",
+    "@demo/interfaces": "workspace:*",
+    "@demo/o2-cube": "workspace:*",
+    "@demo/o2-dashboard": "workspace:*",
+    "@demo/o2-datasource": "workspace:*",
+    "@demo/o2-java-view": "workspace:*",
+    "@demo/o2-resource": "workspace:*",
+    "@demo/o2-sql-view": "workspace:*",
+    "lit": "^3.0.0",
+    "tslib": "^2.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/plugin-proposal-decorators": "^7.28.0",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-node-resolve": "^15.0.0",
+    "@rollup/plugin-terser": "^0.4.0",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "rollup": "^3.0.0",
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0"
+  }
+}
