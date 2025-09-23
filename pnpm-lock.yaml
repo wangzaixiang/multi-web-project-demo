@@ -129,10 +129,37 @@ importers:
       lit:
         specifier: ^3.0.0
         version: 3.0.0
+      tslib:
+        specifier: ^2.6.0
+        version: 2.6.0
     devDependencies:
+      '@babel/core':
+        specifier: ^7.28.4
+        version: 7.28.4
+      '@babel/plugin-proposal-decorators':
+        specifier: ^7.28.0
+        version: 7.28.0(@babel/core@7.28.4)
+      '@babel/preset-env':
+        specifier: ^7.28.3
+        version: 7.28.3(@babel/core@7.28.4)
+      '@babel/preset-typescript':
+        specifier: ^7.27.1
+        version: 7.27.1(@babel/core@7.28.4)
+      '@rollup/plugin-alias':
+        specifier: ^5.1.1
+        version: 5.1.1(rollup@3.0.0)
+      '@rollup/plugin-babel':
+        specifier: ^6.0.4
+        version: 6.0.4(@babel/core@7.28.4)(rollup@3.0.0)
+      '@rollup/plugin-html':
+        specifier: ^2.0.0
+        version: 2.0.0(rollup@3.0.0)
       '@rollup/plugin-node-resolve':
         specifier: ^15.0.0
         version: 15.0.0(rollup@3.0.0)
+      '@rollup/plugin-terser':
+        specifier: ^0.4.0
+        version: 0.4.0(rollup@3.0.0)
       '@rollup/plugin-typescript':
         specifier: ^11.0.0
         version: 11.0.0(rollup@3.0.0)(tslib@2.6.0)(typescript@5.0.2)
@@ -2030,6 +2057,18 @@ packages:
       rollup: 3.0.0
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /@rollup/plugin-html@2.0.0(rollup@3.0.0):
+    resolution: {integrity: sha512-6S0ezKfDRw5FvHk3xm1T/eXP9IlLf82zmV+z2V1/yQL5hXwIUL/Gl2RrNMMIe2rt85rk6+0smvSAtjfTLGylDQ==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+    dependencies:
+      rollup: 3.0.0
     dev: true
 
   /@rollup/plugin-node-resolve@15.0.0(rollup@3.0.0):

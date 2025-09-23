@@ -20,6 +20,8 @@
     "dev:app3": "cd apps/app3 && pnpm run dev",
     "build:app1": "cd apps/app1 && pnpm run build",
     "build:app2": "cd apps/app2 && pnpm run build",
+    "build:app2:vite": "cd apps/app2 && pnpm run build:vite",
+    "build:app2:rollup": "cd apps/app2 && pnpm run build:rollup",
     "build:app3": "cd apps/app3 && pnpm run build",
     "preview:app1": "echo '🚀 App1 running at: http://localhost:3001' && open http://localhost:3001 2>/dev/null || echo 'Please open http://localhost:3001 in your browser'"
   },
