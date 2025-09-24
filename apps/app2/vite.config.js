@@ -24,39 +24,20 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist-vite',
+    outDir: 'dist',
     minify: false, // 禁用代码混淆和压缩
     rollupOptions: {
+      external: ["lit", "lit/decorators.js"],
       output: {
-        manualChunks(id) {
-          // 基于模块路径进行分包
-          if (id.includes('node_modules')) {
-            if (id.includes('lit')) {
-              return 'lit';
-            }
-            return 'vendor';
-          }
-          
-          // 基于包路径进行分包
-          if (id.includes('packages/h2-core')) {
-            return 'h2-core';
-          }
-          if (id.includes('packages/h2-extra')) {
-            return 'h2-extra';
-          }
-          if (id.includes('packages/o2-resource')) {
-            return 'o2-resource';
-          }
-          if (id.includes('packages/o2-datasource')) {
-            return 'o2-datasource';
-          }
-          if (id.includes('packages/o2-sql-view') || id.includes('packages/o2-java-view')) {
-            return 'o2-views';
-          }
-          if (id.includes('packages/o2-cube') || id.includes('packages/o2-dashboard')) {
-            return 'o2-analytics';
-          }
+        manualChunks: {
+            'h2-core': ['@demo/h2-core'],
+            'h2-extra': ['@demo/h2-extra'],
+            'o2-resource': ['@demo/o2-resource'],
+            'o2-datasource': ['@demo/o2-datasource'],
+            'o2-views': ['@demo/o2-sql-view', '@demo/o2-java-view'],
+            'o2-analytics': ['@demo/o2-cube', '@demo/o2-dashboard']
         },
+
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
         assetFileNames: 'assets/[name]-[hash].[ext]',
