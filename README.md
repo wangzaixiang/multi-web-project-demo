@@ -65,6 +65,8 @@ pnpm run dev
 cd apps/app1
 pnpm run dev
 # Visit http://localhost:3001
+
+vite build && vite preview  # build mode
 ```
 
 #### App2 (Split Package)
@@ -72,14 +74,14 @@ pnpm run dev
 cd apps/app2
 pnpm run dev
 # Visit http://localhost:3002
+
+cd ../../
+pnpm run build:esmodules # 构建所有的共享模块到 /esmodules/ 目录下
+cd apps/app2
+vite build && vite preview  # build mode
 ```
 
-#### App3 (Minimal)
-```bash
-cd apps/app3
-pnpm run dev
-# Visit http://localhost:3003
-```
+#
 
 ## 🔧 Development vs Build Strategies
 
@@ -110,128 +112,57 @@ pnpm run dev
 - **Trade-offs**: External dependencies, potential compatibility issues
 - **Use Case**: Widgets, embedded components, micro-frontends
 
-## 🛠️ Build Commands
-
-```bash
-# Build all packages
-pnpm run build
-
-# Build only packages (not apps)
-pnpm run build:packages
-
-# Build only applications
-pnpm run build:apps
-
-# Clean all build outputs
-pnpm run clean
-
-# Type checking
-pnpm run type-check
-
-# Linting
-pnpm run lint
-```
 
 ## 📁 Project Structure
 
 ```
 demo/
 ├── package.json                 # Root workspace configuration
-├── pnpm-workspace.yaml         # pnpm workspace setup
-├── tsconfig.json               # Global TypeScript config
-├── vite.config.js              # Global Vite config
-├── CLAUDE.md                   # Claude Code guidance
+├── README.md                   # Project documentation
 │
-├── packages/                   # Shared packages
-│   ├── interfaces/             # TypeScript interfaces
-│   ├── h2-core/               # Basic components
-│   ├── h2-extra/              # Complex components
-│   ├── o2-resource/           # Resource management
-│   ├── o2-datasource/         # Data source tools
-│   ├── o2-sql-view/           # SQL editor
-│   ├── o2-java-view/          # Java editor
-│   ├── o2-cube/               # Cube analysis
-│   └── o2-dashboard/          # Dashboard designer
+├── docs/                       # Documentation
+│   ├── Build-Workflow.md       # Build process documentation
+│   └── esmodules layout design.md  # ESModules architecture design
+│
+├── scripts/                    # Build scripts
+│   └── build-esmodules.js      # ESM packages build automation
+│
+├── packages/                   # Source packages (ESM modules)
+│   ├── esm-lit-all/           # Lit framework bundle (@esm/lit-all)
+│   │   ├── src/index.ts       # Re-export Lit components
+│   │   ├── package.json       # Package configuration
+│   │   └── vite.config.js     # Build configuration
+│   ├── esm-interfaces/        # TypeScript interfaces (@esm/interfaces)
+│   ├── esm-h2-core/          # Basic UI components (@esm/h2-core)
+│   ├── esm-h2-extra/         # Complex UI components (@esm/h2-extra)
+│   ├── esm-o2-resource/      # Resource management (@esm/o2-resource)
+│   ├── esm-o2-datasource/    # Data source tools (@esm/o2-datasource)
+│   ├── esm-o2-sql-view/      # SQL editor (@esm/o2-sql-view)
+│   ├── esm-o2-java-view/     # Java editor (@esm/o2-java-view)
+│   ├── esm-o2-cube/          # Cube analysis (@esm/o2-cube)
+│   └── esm-o2-dashboard/     # Dashboard designer (@esm/o2-dashboard)
+│
+├── esmodules/                  # Built ESM packages (deployment artifacts)
 │
 └── apps/                      # Applications
-    ├── app1/                  # Full bundle app
-    ├── app2/                  # Split package app
-    └── app3/                  # Minimal app
+    ├── app1/                  # Full bundle app (SPA mode)
+    │   ├── src/main.ts        # Application entry point
+    │   ├── index.html         # HTML template
+    │   ├── package.json       # App dependencies
+    │   └── vite.config.js     # Vite build config
+    ├── app2/                  # Split package app (Share mode)
+    │   ├── src/main.ts        # Application entry point
+    │   ├── index.html         # HTML with Import Maps
+    │   ├── vite-plugin-esm-externals.js  # Custom Vite plugin
+    │   ├── package.json       # App dependencies
+    │   └── vite.config.js     # Vite build config with externals
+    └── app3/                  # Minimal app (planned)
 ```
 
-## 🔍 Key Features Demonstrated
+### Key Structure Notes
 
-### Interface-Driven Design
-- All packages depend on interfaces, not implementations
-- Clear contracts between layers
-- Easy testing and mocking
-
-### Dependency Management
-- Strict unidirectional dependencies
-- No circular dependencies
-- Version consistency across packages
-
-### Build Optimization
-- Tree-shaking support
-- Selective dependency loading
-- Multiple bundling strategies
-
-### Development Experience
-- Hot module replacement
-- TypeScript support
-- Modular development
-
-## 🎯 Technical Considerations
-
-### Performance
-- **App1**: Larger initial bundle, faster subsequent navigation
-- **App2**: Smaller initial bundle, optimized caching, lazy loading
-- **App3**: Minimal bundle, external dependencies
-
-### Maintainability
-- Clear separation of concerns
-- Interface-based contracts
-- Independent package development
-
-### Scalability
-- Easy to add new packages
-- Flexible dependency management
-- Multiple deployment strategies
-
-## 🧪 Testing the Architecture
-
-1. **Dependency Validation**: Ensure no circular dependencies
-2. **Build Verification**: Test all three build strategies
-3. **Performance Testing**: Compare bundle sizes and load times
-4. **Development Workflow**: Verify HMR and development experience
-
-## 📊 Bundle Analysis
-
-After building, you can analyze bundle sizes:
-
-```bash
-# App1 (Full Bundle)
-cd apps/app1 && pnpm run build
-ls -la dist/
-
-# App2 (Split Package)  
-cd apps/app2 && pnpm run build
-ls -la dist/
-
-# App3 (Minimal)
-cd apps/app3 && pnpm run build
-ls -la dist/
-```
-
-## 🤝 Contributing
-
-This is a research project. Key principles:
-
-1. Maintain strict dependency hierarchy
-2. Follow interface-driven design
-3. Test all build strategies
-4. Document architectural decisions
-
-## 📄 License
-
-This project is for technical research and demonstration purposes.
+- **Source Packages** (`packages/esm-*`): Development-time source code with full TypeScript support
+- **Built Packages** (`esmodules/*`): Production-ready ES modules with simplified package.json
+- **Applications** (`apps/*`): Different deployment strategies demonstrating the architecture
+- **Scripts** (`scripts/`): Automation tools for building and managing packages
+- **Documentation** (`docs/`): Detailed architecture and build process documentation
