@@ -1,0 +1,32 @@
+{
+  "name": "@esm/o2-java-view",
+  "version": "1.0.0",
+  "description": "o2 java view components for ESM modules",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "dependencies": {
+    "@esm/lit-all": "workspace:*",
+    "@esm/h2-core": "workspace:*",
+    "@esm/h2-extra": "workspace:*",
+    "@esm/interfaces": "workspace:*"
+  },
+  "devDependencies": {
+    "vite": "^4.0.0",
+    "typescript": "^5.0.0"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false
+}

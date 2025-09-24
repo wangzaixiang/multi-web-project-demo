@@ -1,13 +1,13 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
-import '@demo/h2-core';
-import '@demo/h2-extra';
-import '@demo/o2-resource';
-import '@demo/o2-datasource';
-import '@demo/o2-sql-view';
-import '@demo/o2-java-view';
-import '@demo/o2-cube';
-import '@demo/o2-dashboard';
+import { LitElement, html, css } from '@esm/lit-all';
+import { customElement, state } from '@esm/lit-all';
+import {H2Button, H2Input} from '@esm/h2-core';
+import '@esm/h2-extra';
+import '@esm/o2-resource';
+import '@esm/o2-datasource';
+import '@esm/o2-sql-view';
+import '@esm/o2-java-view';
+import '@esm/o2-cube';
+import '@esm/o2-dashboard';
 
 @customElement('demo-app1')
 export class DemoApp1 extends LitElement {
@@ -93,7 +93,14 @@ export class DemoApp1 extends LitElement {
   @state()
   private _selectedResource: any = null;
 
-  render() {
+    constructor() {
+        super();
+        // let a = new H2Button();
+        // let b = new H2Input();
+    }
+
+
+    render() {
     return html`
       <div class="app-container">
         <div class="sidebar">

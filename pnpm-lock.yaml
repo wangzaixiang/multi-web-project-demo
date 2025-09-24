@@ -23,39 +23,42 @@ importers:
       vite:
         specifier: ^4.4.0
         version: 4.4.0(@types/node@20.0.0)
+      vite-plugin-dts:
+        specifier: ^4.5.4
+        version: 4.5.4(@types/node@20.0.0)(rollup@3.0.0)(typescript@5.0.2)(vite@4.4.0)
 
   apps/app1:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../../packages/h2-core
-      '@demo/h2-extra':
+        version: link:../../packages/esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../../packages/h2-extra
-      '@demo/interfaces':
+        version: link:../../packages/esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../../packages/interfaces
-      '@demo/o2-cube':
+        version: link:../../packages/esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../../packages/o2-cube
-      '@demo/o2-dashboard':
+        version: link:../../packages/esm-lit-all
+      '@esm/o2-cube':
         specifier: workspace:*
-        version: link:../../packages/o2-dashboard
-      '@demo/o2-datasource':
+        version: link:../../packages/esm-o2-cube
+      '@esm/o2-dashboard':
         specifier: workspace:*
-        version: link:../../packages/o2-datasource
-      '@demo/o2-java-view':
+        version: link:../../packages/esm-o2-dashboard
+      '@esm/o2-datasource':
         specifier: workspace:*
-        version: link:../../packages/o2-java-view
-      '@demo/o2-resource':
+        version: link:../../packages/esm-o2-datasource
+      '@esm/o2-java-view':
         specifier: workspace:*
-        version: link:../../packages/o2-resource
-      '@demo/o2-sql-view':
+        version: link:../../packages/esm-o2-java-view
+      '@esm/o2-resource':
         specifier: workspace:*
-        version: link:../../packages/o2-sql-view
-      lit:
-        specifier: ^3.0.0
-        version: 3.0.0
+        version: link:../../packages/esm-o2-resource
+      '@esm/o2-sql-view':
+        specifier: workspace:*
+        version: link:../../packages/esm-o2-sql-view
       tslib:
         specifier: ^2.6.0
         version: 2.6.0
@@ -99,39 +102,36 @@ importers:
 
   apps/app2:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../../packages/h2-core
-      '@demo/h2-extra':
+        version: link:../../packages/esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../../packages/h2-extra
-      '@demo/interfaces':
+        version: link:../../packages/esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../../packages/interfaces
-      '@demo/lit-all':
+        version: link:../../packages/esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../../packages/lit-all
-      '@demo/o2-cube':
+        version: link:../../packages/esm-lit-all
+      '@esm/o2-cube':
         specifier: workspace:*
-        version: link:../../packages/o2-cube
-      '@demo/o2-dashboard':
+        version: link:../../packages/esm-o2-cube
+      '@esm/o2-dashboard':
         specifier: workspace:*
-        version: link:../../packages/o2-dashboard
-      '@demo/o2-datasource':
+        version: link:../../packages/esm-o2-dashboard
+      '@esm/o2-datasource':
         specifier: workspace:*
-        version: link:../../packages/o2-datasource
-      '@demo/o2-java-view':
+        version: link:../../packages/esm-o2-datasource
+      '@esm/o2-java-view':
         specifier: workspace:*
-        version: link:../../packages/o2-java-view
-      '@demo/o2-resource':
+        version: link:../../packages/esm-o2-java-view
+      '@esm/o2-resource':
         specifier: workspace:*
-        version: link:../../packages/o2-resource
-      '@demo/o2-sql-view':
+        version: link:../../packages/esm-o2-resource
+      '@esm/o2-sql-view':
         specifier: workspace:*
-        version: link:../../packages/o2-sql-view
-      lit:
-        specifier: ^3.0.0
-        version: 3.0.0
+        version: link:../../packages/esm-o2-sql-view
       tslib:
         specifier: ^2.6.0
         version: 2.6.0
@@ -176,57 +176,51 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0(@types/node@20.0.0)
 
-  packages/h2-core:
+  packages/esm-h2-core:
     dependencies:
-      '@demo/interfaces':
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
-      tslib:
-        specifier: ^2.6.0
-        version: 2.6.0
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/h2-extra:
+  packages/esm-h2-extra:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/interfaces':
+        version: link:../esm-h2-core
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/interfaces:
+  packages/esm-interfaces:
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
+      vite:
+        specifier: ^4.0.0
+        version: 4.4.0(@types/node@20.0.0)
 
-  packages/lit-all:
+  packages/esm-lit-all:
     dependencies:
       lit:
         specifier: ^3.0.0
@@ -236,161 +230,143 @@ importers:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
       vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
+        specifier: ^4.5.4
+        version: 4.5.4(@types/node@20.0.0)(rollup@3.0.0)(typescript@5.0.2)(vite@4.4.0)
 
-  packages/o2-cube:
+  packages/esm-o2-cube:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/h2-extra':
+        version: link:../esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../h2-extra
-      '@demo/interfaces':
+        version: link:../esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/o2-dashboard:
+  packages/esm-o2-dashboard:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/h2-extra':
+        version: link:../esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../h2-extra
-      '@demo/interfaces':
+        version: link:../esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/o2-datasource:
+  packages/esm-o2-datasource:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/h2-extra':
+        version: link:../esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../h2-extra
-      '@demo/interfaces':
+        version: link:../esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/o2-java-view:
+  packages/esm-o2-java-view:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/h2-extra':
+        version: link:../esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../h2-extra
-      '@demo/interfaces':
+        version: link:../esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/o2-resource:
+  packages/esm-o2-resource:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/h2-extra':
+        version: link:../esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../h2-extra
-      '@demo/interfaces':
+        version: link:../esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
-  packages/o2-sql-view:
+  packages/esm-o2-sql-view:
     dependencies:
-      '@demo/h2-core':
+      '@esm/h2-core':
         specifier: workspace:*
-        version: link:../h2-core
-      '@demo/h2-extra':
+        version: link:../esm-h2-core
+      '@esm/h2-extra':
         specifier: workspace:*
-        version: link:../h2-extra
-      '@demo/interfaces':
+        version: link:../esm-h2-extra
+      '@esm/interfaces':
         specifier: workspace:*
-        version: link:../interfaces
-      '@demo/lit-all':
+        version: link:../esm-interfaces
+      '@esm/lit-all':
         specifier: workspace:*
-        version: link:../lit-all
+        version: link:../esm-lit-all
     devDependencies:
       typescript:
         specifier: ^5.0.0
         version: 5.0.2
       vite:
-        specifier: ^4.4.0
+        specifier: ^4.0.0
         version: 4.4.0(@types/node@20.0.0)
-      vite-plugin-dts:
-        specifier: ^3.0.0
-        version: 3.0.0(@types/node@20.0.0)(typescript@5.0.2)
 
 packages:
 
@@ -2176,39 +2152,6 @@ packages:
       rollup: 3.0.0
     dev: true
 
-  /@rollup/pluginutils@5.3.0(rollup@3.29.5):
-    resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
-    engines: {node: '>=14.0.0'}
-    peerDependencies:
-      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
-    peerDependenciesMeta:
-      rollup:
-        optional: true
-    dependencies:
-      '@types/estree': 1.0.8
-      estree-walker: 2.0.2
-      picomatch: 4.0.3
-      rollup: 3.29.5
-    dev: true
-
-  /@rushstack/node-core-library@3.66.1(@types/node@20.0.0):
-    resolution: {integrity: sha512-ker69cVKAoar7MMtDFZC4CzcDxjwqIhFzqEnYI5NRN/8M3om6saWCVx/A7vL2t/jFCJsnzQplRDqA7c78pytng==}
-    peerDependencies:
-      '@types/node': '*'
-    peerDependenciesMeta:
-      '@types/node':
-        optional: true
-    dependencies:
-      '@types/node': 20.0.0
-      colors: 1.2.5
-      fs-extra: 7.0.1
-      import-lazy: 4.0.0
-      jju: 1.4.0
-      resolve: 1.22.10
-      semver: 7.5.4
-      z-schema: 5.0.5
-    dev: true
-
   /@rushstack/node-core-library@5.14.0(@types/node@20.0.0):
     resolution: {integrity: sha512-eRong84/rwQUlATGFW3TMTYVyqL1vfW9Lf10PH+mVGfIb9HzU3h5AASNIw+axnBLjnD0n3rT5uQBwu9fvzATrg==}
     peerDependencies:
@@ -2301,23 +2244,22 @@ packages:
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
     dev: false
 
-  /@volar/language-core@1.11.1:
-    resolution: {integrity: sha512-dOcNn3i9GgZAcJt43wuaEykSluAuOkQgzni1cuxLxTV0nJKanQztp7FxyswdRILaKH+P2XZMPRp2S4MV/pElCw==}
+  /@volar/language-core@2.4.23:
+    resolution: {integrity: sha512-hEEd5ET/oSmBC6pi1j6NaNYRWoAiDhINbT8rmwtINugR39loROSlufGdYMF9TaKGfz+ViGs1Idi3mAhnuPcoGQ==}
     dependencies:
-      '@volar/source-map': 1.11.1
+      '@volar/source-map': 2.4.23
     dev: true
 
-  /@volar/source-map@1.11.1:
-    resolution: {integrity: sha512-hJnOnwZ4+WT5iupLRnuzbULZ42L7BWWPMmruzwtLhJfpDVoZLjNBxHDi2sY2bgZXCKlpU5XcsMFoYrsQmPhfZg==}
-    dependencies:
-      muggle-string: 0.3.1
+  /@volar/source-map@2.4.23:
+    resolution: {integrity: sha512-Z1Uc8IB57Lm6k7q6KIDu/p+JWtf3xsXJqAX/5r18hYOTpJyBn0KXUR8oTJ4WFYOcDzWC9n3IflGgHowx6U6z9Q==}
     dev: true
 
-  /@volar/typescript@1.11.1:
-    resolution: {integrity: sha512-iU+t2mas/4lYierSnoFOeRFQUhAEMgsFuQxoxvwn5EdQopw43j+J27a4lt9LMInx1gLJBC6qL14WYGlgymaSMQ==}
+  /@volar/typescript@2.4.23:
+    resolution: {integrity: sha512-lAB5zJghWxVPqfcStmAP1ZqQacMpe90UrP5RJ3arDyrhy4aCUQqmxPPLB2PWDKugvylmO41ljK7vZ+t6INMTag==}
     dependencies:
-      '@volar/language-core': 1.11.1
+      '@volar/language-core': 2.4.23
       path-browserify: 1.0.1
+      vscode-uri: 3.1.0
     dev: true
 
   /@vue/compiler-core@3.5.21:
@@ -2337,24 +2279,30 @@ packages:
       '@vue/shared': 3.5.21
     dev: true
 
-  /@vue/language-core@1.8.27(typescript@5.0.2):
-    resolution: {integrity: sha512-L8Kc27VdQserNaCUNiSFdDl9LWT24ly8Hpwf1ECy3aFb9m6bDhBGQYOujDm21N7EW3moKIOKEanQwe1q5BK+mA==}
+  /@vue/compiler-vue2@2.7.16:
+    resolution: {integrity: sha512-qYC3Psj9S/mfu9uVi5WvNZIzq+xnXMhOwbTFKKDD7b1lhpnn71jXSFdTQ+WsIEk0ONCd7VV2IMm7ONl6tbQ86A==}
+    dependencies:
+      de-indent: 1.0.2
+      he: 1.2.0
+    dev: true
+
+  /@vue/language-core@2.2.0(typescript@5.0.2):
+    resolution: {integrity: sha512-O1ZZFaaBGkKbsRfnVH1ifOK1/1BUkyK+3SQsfnh6PmMmD4qJcTU8godCeA96jjDRTL6zgnK7YzCHfaUlH2r0Mw==}
     peerDependencies:
       typescript: '*'
     peerDependenciesMeta:
       typescript:
         optional: true
     dependencies:
-      '@volar/language-core': 1.11.1
-      '@volar/source-map': 1.11.1
+      '@volar/language-core': 2.4.23
       '@vue/compiler-dom': 3.5.21
+      '@vue/compiler-vue2': 2.7.16
       '@vue/shared': 3.5.21
-      computeds: 0.0.1
+      alien-signals: 0.4.14
       minimatch: 9.0.5
-      muggle-string: 0.3.1
+      muggle-string: 0.4.1
       path-browserify: 1.0.1
       typescript: 5.0.2
-      vue-template-compiler: 2.7.16
     dev: true
 
   /@vue/shared@3.5.21:
@@ -2405,6 +2353,10 @@ packages:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
       uri-js: 4.4.1
+    dev: true
+
+  /alien-signals@0.4.14:
+    resolution: {integrity: sha512-itUAVzhczTmP2U5yX67xVpsbbOiquusbWVyA9N+sy6+r6YVbFkahXvNCeEPWEOMhwDYwbVbGHFkVL03N9I5g+Q==}
     dev: true
 
   /ansi-colors@4.1.3:
@@ -2695,24 +2647,20 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /colors@1.2.5:
-    resolution: {integrity: sha512-erNRLao/Y3Fv54qUa0LBB+//Uf3YwMUmdJinN20yMXm9zdKKqH9wt7R9IIVZ+K7ShzfpLV/Zg8+VyrBJYB4lpg==}
-    engines: {node: '>=0.1.90'}
-    dev: true
-
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
 
-  /commander@9.5.0:
-    resolution: {integrity: sha512-KRs7WVDKg86PWiuAqhDrAQnTXZKraVcCc6vFdL14qrZ/DcWwuRo7VoiYXalXO7S5GKpqYiVEwCbgFDfxNHKJBQ==}
-    engines: {node: ^12.20.0 || >=14}
-    requiresBuild: true
+  /compare-versions@6.1.1:
+    resolution: {integrity: sha512-4hm4VPpIecmlg59CHXnRDnqGplJFrbLG4aFEl5vl6cK1u76ws3LLvX7ikFnTDl5vo39sjWD6AaDPYodJp/NNHg==}
     dev: true
-    optional: true
 
-  /computeds@0.0.1:
-    resolution: {integrity: sha512-7CEBgcMjVmitjYo5q8JTJVra6X5mQ20uTThdK+0kR7UEaDrAWEQcRiBtWJzga4eRpP6afNwwLsX2SET2JhVB1Q==}
+  /confbox@0.1.8:
+    resolution: {integrity: sha512-RMtmw0iFkeR4YV+fUOSucriAQNb9g8zFR52MWCtl+cCZOFRNL6zeB395vPzFhEjjn4fMxXudmELnl/KF/WrK6w==}
+    dev: true
+
+  /confbox@0.2.2:
+    resolution: {integrity: sha512-1NB+BKqhtNipMsov4xI/NnhCKp9XG9NamYp5PVm9klAT0fsrNPjaFICsCFhNhwZJKNh7zB/3q8qXz0E9oaMNtQ==}
     dev: true
 
   /convert-source-map@2.0.0:
@@ -3044,6 +2992,10 @@ packages:
   /esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /exsolve@1.0.7:
+    resolution: {integrity: sha512-VO5fQUzZtI6C+vx4w/4BWJpg3s/5l+6pRQEHzFRM8WFi4XffSP1Z+4qi7GbjWbvRQEbdIco5mIMq+zX4rPuLrw==}
     dev: true
 
   /extendable-error@0.1.7:
@@ -3685,6 +3637,15 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
+  /local-pkg@1.1.2:
+    resolution: {integrity: sha512-arhlxbFRmoQHl33a0Zkle/YWlmNwoyt6QNZEIJcqNbdrsix5Lvc4HyyI3EnwxTYlZYc32EbYrQ8SzEZ7dqgg9A==}
+    engines: {node: '>=14'}
+    dependencies:
+      mlly: 1.8.0
+      pkg-types: 2.3.0
+      quansync: 0.2.11
+    dev: true
+
   /locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
@@ -3701,16 +3662,6 @@ packages:
 
   /lodash.debounce@4.0.8:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
-    dev: true
-
-  /lodash.get@4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    deprecated: This package is deprecated. Use the optional chaining (?.) operator instead.
-    dev: true
-
-  /lodash.isequal@4.5.0:
-    resolution: {integrity: sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==}
-    deprecated: This package is deprecated. Use require('node:util').isDeepStrictEqual instead.
     dev: true
 
   /lodash.startcase@4.4.0:
@@ -3739,6 +3690,12 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /magic-string@0.30.19:
+    resolution: {integrity: sha512-2N21sPY9Ws53PZvsEpVtNuSW+ScYbQdp4b9qUaL+9QkHUrGFKo56Lg9Emg5s9V/qrtNBmiR01sYhUOwu3H+VOw==}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.5.5
     dev: true
 
   /map-obj@1.0.1:
@@ -3819,12 +3776,21 @@ packages:
     engines: {node: '>= 8.0.0'}
     dev: true
 
+  /mlly@1.8.0:
+    resolution: {integrity: sha512-l8D9ODSRWLe2KHJSifWGwBqpTZXIXTeo8mlKjY+E2HAakaTeNpqAyBZ8GSqLzHgw4XmHmC8whvpjJNMbFZN7/g==}
+    dependencies:
+      acorn: 8.15.0
+      pathe: 2.0.3
+      pkg-types: 1.3.1
+      ufo: 1.6.1
+    dev: true
+
   /ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
     dev: true
 
-  /muggle-string@0.3.1:
-    resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
+  /muggle-string@0.4.1:
+    resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
     dev: true
 
   /nanoid@3.3.11:
@@ -3959,6 +3925,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /pathe@2.0.3:
+    resolution: {integrity: sha512-WUjGcAqP1gQacoQe+OBJsFA7Ld4DyXuUIjZ5cc75cLHvJ7dtNsTugphxIADwspS+AraAUePCKrSVtPLFj/F88w==}
+    dev: true
+
   /picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
     dev: true
@@ -3983,6 +3953,22 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: true
+
+  /pkg-types@1.3.1:
+    resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
+    dependencies:
+      confbox: 0.1.8
+      mlly: 1.8.0
+      pathe: 2.0.3
+    dev: true
+
+  /pkg-types@2.3.0:
+    resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
+    dependencies:
+      confbox: 0.2.2
+      exsolve: 1.0.7
+      pathe: 2.0.3
     dev: true
 
   /possible-typed-array-names@1.1.0:
@@ -4022,6 +4008,10 @@ packages:
   /punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
     engines: {node: '>=6'}
+    dev: true
+
+  /quansync@0.2.11:
+    resolution: {integrity: sha512-AifT7QEbW9Nri4tAwR5M/uzpBuqfZf+zwaEM/QkzEjj7NBuFD2rBuy0K3dE+8wltbezDV7JMA0WfnCPYRSYbXA==}
     dev: true
 
   /queue-microtask@1.2.3:
@@ -4655,6 +4645,10 @@ packages:
     hasBin: true
     dev: true
 
+  /ufo@1.6.1:
+    resolution: {integrity: sha512-9a4/uxlTWJ4+a5i0ooc1rU7C7YOw3wT+UGqdeNNHWnOF9qcMBgLRS+4IYUqbczewFx4mLEig6gawh7X6mFlEkA==}
+    dev: true
+
   /unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
@@ -4722,37 +4716,30 @@ packages:
       spdx-expression-parse: 3.0.1
     dev: true
 
-  /validator@13.15.15:
-    resolution: {integrity: sha512-BgWVbCI72aIQy937xbawcs+hrVaN/CZ2UwutgaJ36hGqRrLNM+f5LUT/YPRbo8IV/ASeFzXszezV+y2+rq3l8A==}
-    engines: {node: '>= 0.10'}
-    dev: true
-
-  /vite-plugin-dts@3.0.0(@types/node@20.0.0)(typescript@5.0.2):
-    resolution: {integrity: sha512-3UfEnH7DtokNZfEWEODzKWJOVTpNJL26ok121VGgxa2Iu6/uX5wgMiYPnadUuQsowXFibbWijbT4MQy8Ig/+fg==}
-    engines: {node: ^14.18.0 || >=16.0.0}
+  /vite-plugin-dts@4.5.4(@types/node@20.0.0)(rollup@3.0.0)(typescript@5.0.2)(vite@4.4.0):
+    resolution: {integrity: sha512-d4sOM8M/8z7vRXHHq/ebbblfaxENjogAAekcfcDCCwAyvGqnPrc7f4NZbvItS+g4WTgerW0xDwSz5qz11JT3vg==}
     peerDependencies:
       typescript: '*'
+      vite: '*'
+    peerDependenciesMeta:
+      vite:
+        optional: true
     dependencies:
       '@microsoft/api-extractor': 7.52.13(@types/node@20.0.0)
-      '@rollup/pluginutils': 5.3.0(rollup@3.29.5)
-      '@rushstack/node-core-library': 3.66.1(@types/node@20.0.0)
-      '@vue/language-core': 1.8.27(typescript@5.0.2)
+      '@rollup/pluginutils': 5.3.0(rollup@3.0.0)
+      '@volar/typescript': 2.4.23
+      '@vue/language-core': 2.2.0(typescript@5.0.2)
+      compare-versions: 6.1.1
       debug: 4.4.3
       kolorist: 1.8.0
+      local-pkg: 1.1.2
+      magic-string: 0.30.19
       typescript: 5.0.2
-      vue-tsc: 1.8.27(typescript@5.0.2)
-    optionalDependencies:
-      rollup: 3.29.5
       vite: 4.4.0(@types/node@20.0.0)
     transitivePeerDependencies:
       - '@types/node'
-      - less
-      - lightningcss
-      - sass
-      - stylus
-      - sugarss
+      - rollup
       - supports-color
-      - terser
     dev: true
 
   /vite@4.4.0(@types/node@20.0.0):
@@ -4791,23 +4778,8 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vue-template-compiler@2.7.16:
-    resolution: {integrity: sha512-AYbUWAJHLGGQM7+cNTELw+KsOG9nl2CnSv467WobS5Cv9uk3wFcnr1Etsz2sEIHEZvw1U+o9mRlEO6QbZvUPGQ==}
-    dependencies:
-      de-indent: 1.0.2
-      he: 1.2.0
-    dev: true
-
-  /vue-tsc@1.8.27(typescript@5.0.2):
-    resolution: {integrity: sha512-WesKCAZCRAbmmhuGl3+VrdWItEvfoFIPXOvUJkjULi+x+6G/Dy69yO3TBRJDr9eUlmsNAwVmxsNZxvHKzbkKdg==}
-    hasBin: true
-    peerDependencies:
-      typescript: '*'
-    dependencies:
-      '@volar/typescript': 1.11.1
-      '@vue/language-core': 1.8.27(typescript@5.0.2)
-      semver: 7.7.2
-      typescript: 5.0.2
+  /vscode-uri@3.1.0:
+    resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
     dev: true
 
   /wcwidth@1.0.1:
@@ -4973,16 +4945,4 @@ packages:
   /yocto-queue@0.1.0:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
-    dev: true
-
-  /z-schema@5.0.5:
-    resolution: {integrity: sha512-D7eujBWkLa3p2sIpJA0d1pr7es+a7m0vFAnZLlCEKq/Ij2k0MLi9Br2UPxoxdYystm5K1yeBGzub0FlYUEWj2Q==}
-    engines: {node: '>=8.0.0'}
-    hasBin: true
-    dependencies:
-      lodash.get: 4.4.2
-      lodash.isequal: 4.5.0
-      validator: 13.15.15
-    optionalDependencies:
-      commander: 9.5.0
     dev: true

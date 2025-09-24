@@ -5,22 +5,22 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build # rollup -c",
+    "build": "vite build ",
     "preview": "vite preview",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@demo/h2-core": "workspace:*",
-    "@demo/h2-extra": "workspace:*",
-    "@demo/interfaces": "workspace:*",
-    "@demo/o2-cube": "workspace:*",
-    "@demo/o2-dashboard": "workspace:*",
-    "@demo/o2-datasource": "workspace:*",
-    "@demo/o2-java-view": "workspace:*",
-    "@demo/o2-resource": "workspace:*",
-    "@demo/o2-sql-view": "workspace:*",
-    "lit": "^3.0.0",
+    "@esm/h2-core": "workspace:*",
+    "@esm/h2-extra": "workspace:*",
+    "@esm/interfaces": "workspace:*",
+    "@esm/o2-cube": "workspace:*",
+    "@esm/o2-dashboard": "workspace:*",
+    "@esm/o2-datasource": "workspace:*",
+    "@esm/o2-java-view": "workspace:*",
+    "@esm/o2-resource": "workspace:*",
+    "@esm/o2-sql-view": "workspace:*",
+    "@esm/lit-all": "workspace:*",
     "tslib": "^2.6.0"
   },
   "devDependencies": {

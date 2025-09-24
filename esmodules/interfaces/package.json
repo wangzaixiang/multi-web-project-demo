@@ -1,0 +1,16 @@
+{
+  "name": "@esm/interfaces",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dependencies": {},
+  "sideEffects": false,
+  "meta": {
+    "buildTime": "2025-09-24T06:37:38.099Z",
+    "sourcePackage": "@esm/interfaces",
+    "buildHash": "rroa04"
+  }
+}

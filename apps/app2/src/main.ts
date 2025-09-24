@@ -1,9 +1,9 @@
-import { LitElement, html, css } from '@demo/lit-all';
-import { customElement, state } from '@demo/lit-all';
-import '@demo/h2-core';
-import '@demo/h2-extra';
-import '@demo/o2-resource';
-import '@demo/o2-datasource';
+import { LitElement, html, css } from '@esm/lit-all';
+import { customElement, state } from '@esm/lit-all';
+import '@esm/h2-core';
+import '@esm/h2-extra';
+import '@esm/o2-resource';
+import '@esm/o2-datasource';
 
 @customElement('demo-app2')
 export class DemoApp2 extends LitElement {
@@ -282,19 +282,19 @@ export class DemoApp2 extends LitElement {
           break;
         
         case 'sql':
-          await import('@demo/o2-sql-view');
+          await import('@esm/o2-sql-view');
           break;
         
         case 'java':
-          await import('@demo/o2-java-view');
+          await import('@esm/o2-java-view');
           break;
         
         case 'cube':
-          await import('@demo/o2-cube');
+          await import('@esm/o2-cube');
           break;
         
         case 'dashboard':
-          await import('@demo/o2-dashboard');
+          await import('@esm/o2-dashboard');
           break;
       }
       

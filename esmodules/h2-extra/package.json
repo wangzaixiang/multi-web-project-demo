@@ -1,0 +1,20 @@
+{
+  "name": "@esm/h2-extra",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dependencies": {
+    "@esm/lit-all": "*",
+    "@esm/h2-core": "*",
+    "@esm/interfaces": "*"
+  },
+  "sideEffects": false,
+  "meta": {
+    "buildTime": "2025-09-24T06:37:41.057Z",
+    "sourcePackage": "@esm/h2-extra",
+    "buildHash": "pvnjfu"
+  }
+}

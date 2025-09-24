@@ -1,0 +1,20 @@
+{
+  "name": "@esm/o2-cube",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "exports": {
+    ".": "./index.js"
+  },
+  "dependencies": {
+    "@esm/lit-all": "*",
+    "@esm/h2-core": "*",
+    "@esm/interfaces": "*"
+  },
+  "sideEffects": false,
+  "meta": {
+    "buildTime": "2025-09-24T06:37:48.086Z",
+    "sourcePackage": "@esm/o2-cube",
+    "buildHash": "2opqkk"
+  }
+}
