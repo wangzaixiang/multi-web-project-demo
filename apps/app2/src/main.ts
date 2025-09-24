@@ -1,5 +1,5 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, state } from 'lit/decorators.js';
+import { LitElement, html, css } from '@demo/lit-all';
+import { customElement, state } from '@demo/lit-all';
 import '@demo/h2-core';
 import '@demo/h2-extra';
 import '@demo/o2-resource';

@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "rollup -c",
-    "build:vite": "vite build",
+    "build": "vite build",
     "build:rollup": "rollup -c",
     "preview": "vite preview",
     "preview:vite": "vite preview --outDir dist-vite",
@@ -14,6 +13,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@demo/lit-all": "workspace:*",
     "@demo/h2-core": "workspace:*",
     "@demo/h2-extra": "workspace:*",
     "@demo/interfaces": "workspace:*",

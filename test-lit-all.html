@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Lit-All</title>
+    <script type="importmap">
+    {
+        "imports": {
+           "lit": "./packages/lit-all/dist/index.js",
+           "lit/decorators.js": "./packages/lit-all/dist/index.js"
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>Testing Lit-All Bundle</h1>
+    <simple-element></simple-element>
+    
+    <script type="module">
+    import { LitElement, html, css } from 'lit';
+    import { customElement, property } from 'lit/decorators.js';
+
+    @customElement('simple-element')
+    class SimpleElement extends LitElement {
+        static styles = css`
+            :host {
+                display: block;
+                padding: 20px;
+                background: #f0f0f0;
+                border-radius: 8px;
+                margin: 20px 0;
+            }
+        `;
+
+        @property() 
+        message = 'Hello from Lit-All Bundle!';
+
+        render() {
+            return html`
+                <p>${this.message}</p>
+                <p>✅ Lit bundle loaded successfully!</p>
+                <p>📦 Size: ~28KB (instead of multiple CDN requests)</p>
+            `;
+        }
+    }
+    </script>
+</body>
+</html>

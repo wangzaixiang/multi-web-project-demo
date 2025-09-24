@@ -6,6 +6,7 @@ import terser from '@rollup/plugin-terser';
 import html from '@rollup/plugin-html';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { copyFileSync, mkdirSync } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,7 +18,6 @@ export default {
     format: 'es',
     sourcemap: true,
     manualChunks: {
-      'lit': ['lit'],
       'h2-core': ['@demo/h2-core'],
       'h2-extra': ['@demo/h2-extra'],
       'o2-resource': ['@demo/o2-resource'],

@@ -1,5 +1,5 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, property, query } from 'lit/decorators.js';
+import { LitElement, html, css } from '@demo/lit-all';
+import { customElement, property, query } from '@demo/lit-all';
 
 @customElement('h2-input')
 export class H2Input extends LitElement {

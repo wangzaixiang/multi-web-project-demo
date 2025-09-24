@@ -1,5 +1,5 @@
-import { LitElement, html, css } from 'lit';
-import { customElement, property, state } from 'lit/decorators.js';
+import { LitElement, html, css } from '@demo/lit-all';
+import { customElement, property, state } from '@demo/lit-all';
 import type { IEditor, IDataSourceConfig } from '@demo/interfaces';
 import '@demo/h2-core';
 

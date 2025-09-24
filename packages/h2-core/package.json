@@ -12,21 +12,20 @@
     }
   },
   "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
+    "build": "vite build",
+    "dev": "vite build --watch",
     "clean": "rm -rf dist",
     "type-check": "tsc --noEmit",
     "lint": "echo 'Linting h2-core...'"
   },
   "dependencies": {
     "@demo/interfaces": "workspace:*",
-    "lit": "^3.0.0",
+    "@demo/lit-all": "workspace:*",
     "tslib": "^2.6.0"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "rollup": "^3.0.0",
-    "typescript": "^5.0.0"
+    "typescript": "^5.0.0",
+    "vite": "^4.4.0",
+    "vite-plugin-dts": "^3.0.0"
   }
 }
