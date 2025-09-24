@@ -13,8 +13,8 @@
   },
   "sideEffects": false,
   "meta": {
-    "buildTime": "2025-09-24T06:37:45.358Z",
+    "buildTime": "2025-09-24T08:14:47.193Z",
     "sourcePackage": "@esm/o2-sql-view",
-    "buildHash": "36ltf4"
+    "buildHash": "6wuaeb"
   }
 }

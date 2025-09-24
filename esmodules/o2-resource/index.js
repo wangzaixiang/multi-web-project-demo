@@ -1,4 +1,4 @@
-import { LitElement as f, html as a, css as v, property as p, state as d, query as _, customElement as g } from "@esm/lit-all";
+import { css as f, property as p, state as d, query as _, customElement as v, LitElement as g, html as a } from "@esm/lit-all";
 import "@esm/h2-extra";
 import "@esm/h2-core";
 class y {
@@ -210,7 +210,7 @@ var b = Object.defineProperty, x = Object.getOwnPropertyDescriptor, h = (r, e, t
     (n = r[i]) && (o = (s ? n(e, t, o) : n(o)) || o);
   return s && o && b(e, t, o), o;
 };
-let l = class extends f {
+let l = class extends g {
   constructor() {
     super(...arguments), this.showToolbar = !0, this.editable = !0, this._resourceData = [], this._loading = !1, this._error = "", this._contextMenu = null, this._showCreateDialog = !1, this._showPropertiesDialog = !1, this._selectedNode = null, this._resourceService = new y(), this._handleDocumentClick = (r) => {
       this.contains(r.target) || (this._contextMenu = null);
@@ -553,7 +553,7 @@ let l = class extends f {
     return this._selectedNode;
   }
 };
-l.styles = v`
+l.styles = f`
     :host {
       display: block;
       height: 100%;
@@ -674,14 +674,14 @@ h([
   _(".properties-dialog")
 ], l.prototype, "_propertiesDialog", 2);
 l = h([
-  g("o2-resource-tree")
+  v("o2-resource-tree")
 ], l);
 var w = Object.defineProperty, $ = Object.getOwnPropertyDescriptor, u = (r, e, t, s) => {
   for (var o = s > 1 ? void 0 : s ? $(e, t) : e, i = r.length - 1, n; i >= 0; i--)
     (n = r[i]) && (o = (s ? n(e, t, o) : n(o)) || o);
   return s && o && w(e, t, o), o;
 };
-let c = class extends f {
+let c = class extends g {
   constructor() {
     super(...arguments), this.placeholder = "Search resources...", this.showFilters = !0, this.autoSearch = !0, this._query = "", this._typeFilter = "", this._results = [], this._loading = !1, this._error = "", this._searchPerformed = !1, this._resourceService = new y(), this._searchTimeout = null;
   }
@@ -906,7 +906,7 @@ let c = class extends f {
     return [...this._results];
   }
 };
-c.styles = v`
+c.styles = f`
     :host {
       display: block;
     }
@@ -1084,7 +1084,7 @@ u([
   _("#search-input")
 ], c.prototype, "_searchInput", 2);
 c = u([
-  g("o2-resource-searcher")
+  v("o2-resource-searcher")
 ], c);
 export {
   c as O2ResourceSearcher,

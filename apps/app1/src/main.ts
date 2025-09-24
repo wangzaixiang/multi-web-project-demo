@@ -1,6 +1,6 @@
 import { LitElement, html, css } from '@esm/lit-all';
 import { customElement, state } from '@esm/lit-all';
-import {H2Button, H2Input} from '@esm/h2-core';
+import '@esm/h2-core'; // 确保组件注册
 import '@esm/h2-extra';
 import '@esm/o2-resource';
 import '@esm/o2-datasource';
@@ -95,8 +95,7 @@ export class DemoApp1 extends LitElement {
 
     constructor() {
         super();
-        // let a = new H2Button();
-        // let b = new H2Input();
+        // 现在不需要显式引用了，副作用导入会确保组件注册
     }
 
 

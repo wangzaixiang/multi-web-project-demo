@@ -1,10 +1,10 @@
-import { LitElement as g, html as a, css as f, property as s, customElement as y, query as w, state as _ } from "@esm/lit-all";
+import { css as g, property as s, customElement as f, LitElement as y, html as a, query as w, state as _ } from "@esm/lit-all";
 var m = Object.defineProperty, $ = Object.getOwnPropertyDescriptor, x = (e, t, r, i) => {
   for (var o = i > 1 ? void 0 : i ? $(t, r) : t, l = e.length - 1, n; l >= 0; l--)
     (n = e[l]) && (o = (i ? n(t, r, o) : n(o)) || o);
   return i && o && m(t, r, o), o;
 };
-let v = class extends g {
+let v = class extends y {
   constructor() {
     super(...arguments), this.variant = "primary", this.disabled = !1, this.type = "button";
   }
@@ -32,7 +32,7 @@ let v = class extends g {
     }));
   }
 };
-v.styles = f`
+v.styles = g`
     :host {
       display: inline-block;
     }
@@ -83,14 +83,14 @@ x([
   s({ type: String })
 ], v.prototype, "type", 2);
 v = x([
-  y("h2-button")
+  f("h2-button")
 ], v);
 var k = Object.defineProperty, O = Object.getOwnPropertyDescriptor, h = (e, t, r, i) => {
   for (var o = i > 1 ? void 0 : i ? O(t, r) : t, l = e.length - 1, n; l >= 0; l--)
     (n = e[l]) && (o = (i ? n(t, r, o) : n(o)) || o);
   return i && o && k(t, r, o), o;
 };
-let d = class extends g {
+let d = class extends y {
   constructor() {
     super(...arguments), this.label = "", this.value = "", this.placeholder = "", this.type = "text", this.disabled = !1, this.required = !1, this.error = "";
   }
@@ -145,7 +145,7 @@ let d = class extends g {
     (e = this._input) == null || e.blur();
   }
 };
-d.styles = f`
+d.styles = g`
     :host {
       display: block;
     }
@@ -217,14 +217,14 @@ h([
   w("input")
 ], d.prototype, "_input", 2);
 d = h([
-  y("h2-input")
+  f("h2-input")
 ], d);
 var C = Object.defineProperty, E = Object.getOwnPropertyDescriptor, u = (e, t, r, i) => {
   for (var o = i > 1 ? void 0 : i ? E(t, r) : t, l = e.length - 1, n; l >= 0; l--)
     (n = e[l]) && (o = (i ? n(t, r, o) : n(o)) || o);
   return i && o && C(t, r, o), o;
 };
-let p = class extends g {
+let p = class extends y {
   constructor() {
     super(...arguments), this.label = "", this.value = "", this.placeholder = "Select an option", this.options = [], this.disabled = !1, this._open = !1, this._handleDocumentClick = (e) => {
       this.contains(e.target) || (this._open = !1);
@@ -304,7 +304,7 @@ let p = class extends g {
     r && !r.disabled && this._selectOption(r);
   }
 };
-p.styles = f`
+p.styles = g`
     :host {
       display: block;
       position: relative;
@@ -418,14 +418,14 @@ u([
   w(".select-trigger")
 ], p.prototype, "_trigger", 2);
 p = u([
-  y("h2-select")
+  f("h2-select")
 ], p);
 var D = Object.defineProperty, P = Object.getOwnPropertyDescriptor, b = (e, t, r, i) => {
   for (var o = i > 1 ? void 0 : i ? P(t, r) : t, l = e.length - 1, n; l >= 0; l--)
     (n = e[l]) && (o = (i ? n(t, r, o) : n(o)) || o);
   return i && o && D(t, r, o), o;
 };
-let c = class extends g {
+let c = class extends y {
   constructor() {
     super(...arguments), this.title = "", this.open = !1, this.size = "md", this.closable = !0, this.closeOnOverlayClick = !0, this._handleKeyDown = (e) => {
       e.key === "Escape" && this.closable && this.close();
@@ -480,7 +480,7 @@ let c = class extends g {
     super.disconnectedCallback(), document.body.style.overflow = "", this.removeEventListener("keydown", this._handleKeyDown);
   }
 };
-c.styles = f`
+c.styles = g`
     :host {
       display: none;
     }
@@ -600,7 +600,7 @@ b([
   w(".dialog")
 ], c.prototype, "_dialog", 2);
 c = b([
-  y("h2-dialog")
+  f("h2-dialog")
 ], c);
 export {
   v as H2Button,

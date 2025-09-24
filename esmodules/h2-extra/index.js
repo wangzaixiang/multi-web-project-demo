@@ -1,10 +1,10 @@
-import { LitElement as g, html as o, css as f, property as p, state as c, customElement as _ } from "@esm/lit-all";
+import { css as g, property as p, state as c, customElement as f, LitElement as _, html as o } from "@esm/lit-all";
 var b = Object.defineProperty, v = Object.getOwnPropertyDescriptor, u = (e, t, s, i) => {
   for (var d = i > 1 ? void 0 : i ? v(t, s) : t, a = e.length - 1, l; a >= 0; a--)
     (l = e[a]) && (d = (i ? l(t, s, d) : l(d)) || d);
   return i && d && b(t, s, d), d;
 };
-let h = class extends g {
+let h = class extends _ {
   constructor() {
     super(...arguments), this.data = [], this._selectedNodeIds = /* @__PURE__ */ new Set(), this._expandedNodeIds = /* @__PURE__ */ new Set();
   }
@@ -165,7 +165,7 @@ let h = class extends g {
     return !1;
   }
 };
-h.styles = f`
+h.styles = g`
     :host {
       display: block;
       font-family: var(--h2-tree-font-family, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
@@ -255,14 +255,14 @@ u([
   c()
 ], h.prototype, "_expandedNodeIds", 2);
 h = u([
-  _("h2-tree")
+  f("h2-tree")
 ], h);
 var x = Object.defineProperty, m = Object.getOwnPropertyDescriptor, n = (e, t, s, i) => {
   for (var d = i > 1 ? void 0 : i ? m(t, s) : t, a = e.length - 1, l; a >= 0; a--)
     (l = e[a]) && (d = (i ? l(t, s, d) : l(d)) || d);
   return i && d && x(t, s, d), d;
 };
-let r = class extends g {
+let r = class extends _ {
   constructor() {
     super(...arguments), this.columns = [], this.data = [], this.options = {}, this._selectedRows = /* @__PURE__ */ new Set(), this._sortColumn = "", this._sortDirection = "asc", this._currentPage = 1, this._filteredData = [];
   }
@@ -430,7 +430,7 @@ let r = class extends g {
     this.options.multiSelect || this._selectedRows.clear(), this._selectedRows.add(e), this.requestUpdate();
   }
 };
-r.styles = f`
+r.styles = g`
     :host {
       display: block;
       border: 1px solid var(--h2-datagrid-border-color, #e0e0e0);
@@ -585,7 +585,7 @@ n([
   c()
 ], r.prototype, "_filteredData", 2);
 r = n([
-  _("h2-datagrid")
+  f("h2-datagrid")
 ], r);
 export {
   r as H2DataGrid,

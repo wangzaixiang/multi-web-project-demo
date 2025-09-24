@@ -1,4 +1,4 @@
-import { LitElement as m, html as r, css as v, property as u, state as d, customElement as _ } from "@esm/lit-all";
+import { css as m, property as u, state as d, customElement as v, LitElement as _, html as r } from "@esm/lit-all";
 import "@esm/h2-core";
 import "@esm/h2-extra";
 var y = Object.defineProperty, f = Object.getOwnPropertyDescriptor, l = (e, t, i, o) => {
@@ -6,7 +6,7 @@ var y = Object.defineProperty, f = Object.getOwnPropertyDescriptor, l = (e, t, i
     (c = e[h]) && (a = (o ? c(t, i, a) : c(a)) || a);
   return o && a && y(t, i, a), a;
 };
-let s = class extends m {
+let s = class extends _ {
   constructor() {
     super(...arguments), this.data = null, this.readOnly = !1, this._schema = null, this._connected = !1, this._loading = !1, this._error = "", this._previewData = [];
   }
@@ -234,7 +234,7 @@ let s = class extends m {
     this.data = null, this._schema = null, this._previewData = [], this._connected = !1;
   }
 };
-s.styles = v`
+s.styles = m`
     :host {
       display: block;
       height: 100%;
@@ -331,14 +331,14 @@ l([
   d()
 ], s.prototype, "_previewData", 2);
 s = l([
-  _("o2-datasource-viewer")
+  v("o2-datasource-viewer")
 ], s);
 var b = Object.defineProperty, g = Object.getOwnPropertyDescriptor, p = (e, t, i, o) => {
   for (var a = o > 1 ? void 0 : o ? g(t, i) : t, h = e.length - 1, c; h >= 0; h--)
     (c = e[h]) && (a = (o ? c(t, i, a) : c(a)) || a);
   return o && a && b(t, i, a), a;
 };
-let n = class extends m {
+let n = class extends _ {
   constructor() {
     super(...arguments), this.data = {
       id: "",
@@ -495,7 +495,7 @@ let n = class extends m {
     this._originalData && (this.data = { ...this._originalData }, this._isDirty = !1, this._validateData());
   }
 };
-n.styles = v`
+n.styles = m`
     :host {
       display: block;
       height: 100%;
@@ -554,7 +554,7 @@ p([
   d()
 ], n.prototype, "_originalData", 2);
 n = p([
-  _("o2-datasource-editor")
+  v("o2-datasource-editor")
 ], n);
 export {
   n as O2DataSourceEditor,

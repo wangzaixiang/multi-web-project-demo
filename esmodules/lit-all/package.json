@@ -9,8 +9,8 @@
   "dependencies": {},
   "sideEffects": false,
   "meta": {
-    "buildTime": "2025-09-24T06:37:36.733Z",
+    "buildTime": "2025-09-24T08:14:38.649Z",
     "sourcePackage": "@esm/lit-all",
-    "buildHash": "yo35kb"
+    "buildHash": "j3pdh6"
   }
 }
