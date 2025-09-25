@@ -68,3 +68,10 @@ apps/app2/dist/             # App build output
 - **Performance**: Small app bundles
 - **Development**: Fast rebuilds with sourcemaps
 - **Deployment**: Single command builds everything
+
+# TODO
+1. h2-core(修改 H2Button), o2-resource(use H2Button), 开发的模式是正确的。
+   - modify h2-core source, build, deploy, o2-resource install, o2-resource dev/test
+   - modify h2-core/o2-resource 本地依赖， modify h2-core source, dev
+     - TODO: 改造项目的支持 Vite ?
+2. 
